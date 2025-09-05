@@ -97,7 +97,6 @@ Installations:
 ## 🧾 Documentation <a name="documentations"></a>
 
 - [Microsoft dotnet](https://learn.microsoft.com/en-us/dotnet/csharp/)
-- [Microsoft dotnet API](https://learn.microsoft.com/en-us/dotnet/api/)
 - [MSTest](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
 - [xunit](https://xunit.net/docs/getting-started/netcore/cmdline)
 - [Dotnet Tips Jetbrains](https://www.jetbrains.com/guide/dotnet/tips/)
