@@ -1,0 +1,60 @@
+﻿@model user_management.ViewModels.UserCreateViewModel
+@using System.Security.Claims;
+
+@{
+    ViewData["Title"] = "Index";
+    // In a controller or Razor view:
+    var loginName = User.FindFirstValue(ClaimTypes.Name);
+}
+
+<h1>User List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NewUser.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewUser.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewUser.NRCNo)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NRCNo)
+            </td>
+            <td>
+                @if (item.Username != loginName)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <span>|</span>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> <span>|</span>
+                }
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
