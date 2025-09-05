@@ -64,7 +64,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd your-folder
-  git clone git@github.com:sawmon71293/notes-backend.git
+  git clone git@github.com:sawmon71293/user-mvc.git
 ```
 
 ### Install
