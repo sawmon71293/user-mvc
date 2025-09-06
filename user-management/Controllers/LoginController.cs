@@ -53,7 +53,7 @@ namespace user_management.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                ModelState.AddModelError(string.Empty, "Invalid email or password.");
+                ModelState.AddModelError(string.Empty, "Invalid Username or password.");
             }
             return View(model);
         }

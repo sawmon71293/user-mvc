@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,10 +18,12 @@ namespace user_management.Controllers
     public class UsersController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly PasswordHasher<User> _passwordHasher;
 
-        public UsersController(AppDbContext context)
+        public UsersController(AppDbContext context, PasswordHasher<User> passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
 
         // GET: Users
@@ -103,7 +106,7 @@ namespace user_management.Controllers
 
             // Set CreatedAt to UTC
             user.CreatedAt = DateTime.UtcNow;
-
+            user.Password = _passwordHasher.HashPassword(user, user.Password);
             _context.Add(user);
             await _context.SaveChangesAsync();
 
