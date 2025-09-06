@@ -26,20 +26,20 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 User MVC using Asp.Net Core and Entity Framework <a name="about-project"></a>
+# 📖 User MVC <a name="about-project"></a>
 
-**User MVC** is a C# .Net Core Simple CRUD that performs CRUD operations and authentication.
+**User MVC** is a C# .Net Core MVC that performs user CRUD operations and authentication.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack
 
-<a name="built-with">C# .Net Core 9.0</a>
+<a name="built-with">C# .Net Core MVC 9.0</a>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-This is to practice C# .Net Core Full Stack App using Entity Framework and MVC , authentication.
+This is to practice C# .Net Core Full Stack App using Entity Framework, MVC and authentication.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
