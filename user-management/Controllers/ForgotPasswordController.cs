@@ -33,12 +33,6 @@ namespace user_management.Controllers
                 var user = _context.Users.FirstOrDefault(u => u.Email == model.Email);
                 if (user != null)
                 {
-                    var result = _passwordHasher.VerifyHashedPassword(user, user.Password, model.OldPassword);
-                    if (result != PasswordVerificationResult.Success)
-                    {
-                        ModelState.AddModelError(string.Empty, "Old Password is incorrect.");
-                        return View(model);
-                    }
 
                     if (model.NewPassword == model.ConfirmPassword)
                     {
