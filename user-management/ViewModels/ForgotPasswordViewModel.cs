@@ -8,9 +8,7 @@ namespace user_management.ViewModels
         [Required(ErrorMessage ="Email is required!" )]
         [EmailAddress(ErrorMessage = "Invalid Email Address!")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Old Password is required!")]
-
-        public string OldPassword { get; set; }
+        
         [Required(ErrorMessage = "New Password is required!")]
 
         public string NewPassword { get; set; }
