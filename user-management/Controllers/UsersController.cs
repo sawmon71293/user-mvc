@@ -47,7 +47,7 @@ namespace user_management.Controllers
             }
 
             var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -60,7 +60,6 @@ namespace user_management.Controllers
         public async Task<IActionResult> Create()
         {
             var oneHourAgo = DateTime.UtcNow.AddHours(-1);
-            Console.WriteLine(oneHourAgo);
             var recentUsers = await _context.Users
                         .Where(u => u.CreatedAt >= oneHourAgo)
                         .ToListAsync();
